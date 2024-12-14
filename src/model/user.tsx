@@ -30,7 +30,7 @@ export interface User extends Document{
     veryifyCodeExpiry: Date;
     isVerified: boolean;
     isAcceptingMessage: boolean;
-    message: Message[]
+    messages: Message[]
 }
 
 // user schema
@@ -68,7 +68,7 @@ const UserSchema: Schema<User>= new Schema({
         type: Boolean,
         default: true,
     },
-    message: [MessageSchema]
+    messages: [MessageSchema]
 })
 
 // exporting usermodel - 2 cases => 1 - usermodel already exists or if doesnts then create and return 
