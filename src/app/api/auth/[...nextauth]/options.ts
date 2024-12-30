@@ -50,7 +50,7 @@ export const authOptions: NextAuthOptions = {
                 token.isVerified = user.isVerified;
                 token.isAcceptingMessages = user.isAcceptingMessages;
                 token.username = user.username
-            }
+            } 
             return token
           },
         async session({ session, token }) {

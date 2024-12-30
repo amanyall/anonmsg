@@ -14,6 +14,7 @@ export async function GET(request:Request) {
   await dbConnnect()
    
     try {
+      // checking username with url 
         const {searchParams} = new URL(request.url)
         const queryParam = {
             username : searchParams.get('username')
@@ -22,7 +23,7 @@ export async function GET(request:Request) {
         const result = UsernameQuerySchema.safeParse(queryParam)
         console.log(result) // remove
         if (!result.success) {
-          const usernameErrors = result.error.format().username?._errors  || []
+          const usernameErrors = result.error.format().username?._errors  || []  
           return Response.json({
             success: false,
             message: usernameErrors?.length > 0 ? usernameErrors.join(', ') : 'Invalid query parameters',

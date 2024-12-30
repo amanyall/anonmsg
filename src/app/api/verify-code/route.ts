@@ -9,7 +9,8 @@ export async function POST(request: Request){
     await dbConnnect()
     try {
         const {username, code} = await request.json()
- 
+        
+        // getting the username from the url
        const decodedUsername = decodeURIComponent(username)
        const user = await UserModel.findOne({username: decodedUsername})
 
@@ -22,6 +23,7 @@ export async function POST(request: Request){
        )
        }
 
+       // to check validity of the code
        const isCodeValid = user.verifyCode === code
        const isCodeNotExpired = new Date(user.veryifyCodeExpiry) > new Date()
 
