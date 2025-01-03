@@ -1,6 +1,6 @@
 'use client';
 
-import { ApiResponse } from '@/types/ApiResponse';
+import { ApiResponse } from 'src/types/ApiResponse';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -21,7 +21,7 @@ import { useToast } from '@/components/ui/use-toast';
 import axios, { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { signUpSchema } from '@/schemas/signUpSchema';
+import { signUpSchema } from 'src/schemas/signUpSchema';
 
 export default function SignUpForm() {
   const [username, setUsername] = useState('');

@@ -69,7 +69,7 @@ export default function VerifyAccount() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Verification Code</FormLabel>
+                   <FormLabel>Verification Code</FormLabel>
                   <Input {...field} />
                   <FormMessage />
                 </FormItem>
